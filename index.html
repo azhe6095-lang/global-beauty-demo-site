@@ -63,6 +63,7 @@
     .hero-quote::before{content:"“";position:absolute;left:-.45rem;top:-1rem;color:rgba(84,43,97,.2);font:3.2rem/1 Georgia,serif}
     .hero-quote strong{display:block;font:400 1.05rem/1.7 "Songti SC",SimSun,serif;letter-spacing:.08em}
     .hero-quote small{display:block;margin-top:.6rem;color:#8b7b90;font:.72rem/1.6 Georgia,serif;letter-spacing:.13em}
+    .hero-principles{position:absolute;left:0;bottom:clamp(2rem,6vh,4.5rem);margin:0;color:rgba(84,43,97,.72);font:400 clamp(1rem,1.35vw,1.25rem)/1.5 "Songti SC",SimSun,serif;letter-spacing:.22em;white-space:nowrap}
     .floating-rail{position:fixed;z-index:30;right:1rem;top:50%;translate:0 -22%;display:grid;overflow:hidden;color:white;background:rgba(84,43,97,.9);border:1px solid rgba(255,255,255,.45);border-radius:.75rem;backdrop-filter:blur(10px)}
     .floating-rail button,.floating-rail a{width:4.3rem;min-height:4.2rem;display:grid;place-items:center;padding:.5rem;color:white;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.25);font-size:.75rem;cursor:pointer;text-align:center}
     .floating-rail a:last-child{min-height:3rem;border:0;font-size:1.2rem}
@@ -171,7 +172,7 @@
     }
     @media(max-width:720px){
       .site-header{height:4.35rem}.brand{flex-basis:6.4rem;height:2.7rem}.mobile-nav{inset-block-start:4.35rem}html{scroll-padding-top:4.35rem}
-      .hero{min-height:calc(100svh - 4.35rem)}.hero-bg{object-position:64% center}.hero::after{background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.48) 55%,rgba(255,255,255,.08))}.hero-inner{padding-top:3.3rem}.hero-copy{width:88%}.hero h1{font-size:clamp(2rem,8.6vw,2.55rem);letter-spacing:.01em}.script{margin:.15rem 0 .4rem 4.8rem;font-size:1.6rem}.hero-lead{font-size:1rem}.hero-sub{font-size:.78rem}.hero-quote{display:none}
+      .hero{min-height:calc(100svh - 4.35rem)}.hero-bg{object-position:64% center}.hero::after{background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.48) 55%,rgba(255,255,255,.08))}.hero-inner{padding-top:3.3rem}.hero-copy{width:88%}.hero h1{font-size:clamp(2rem,8.6vw,2.55rem);letter-spacing:.01em}.script{margin:.15rem 0 .4rem 4.8rem;font-size:1.6rem}.hero-lead{font-size:1rem}.hero-sub{font-size:.78rem}.hero-quote{display:none}.hero-principles{bottom:1.25rem;font-size:.8rem;letter-spacing:.14em}
       .section{padding-block:3.8rem}.template-head{margin-bottom:2.2rem}.about-layout{grid-template-columns:1fr}.about-copy{order:2}.about-arch{order:1;width:min(82vw,22rem)}.category-rail{display:flex;flex-direction:row;overflow-x:auto;padding-bottom:.35rem;scrollbar-width:none}.category-item{min-width:9.5rem}.project-grid{grid-template-columns:1fr 1fr}.doctor-grid{grid-template-columns:1fr}.doctor-card{width:min(100%,24rem);margin-inline:auto}.strength-layout{grid-template-columns:1fr}.strength-visual{min-height:0;padding:8px}.strength-visual img{aspect-ratio:auto}.strength-panel{padding:1.25rem}.honor-grid{grid-template-columns:1fr 1fr}.space-grid{display:grid;grid-template-columns:1fr;grid-template-rows:auto}.space-card:first-child{grid-row:auto}.space-card{aspect-ratio:4/3}.story-stack{gap:1.2rem}.story-visual{min-height:0}.story-contain{padding:8px}.story-contain+.story-copy{padding-block:1.45rem}.story-visual>img{aspect-ratio:4/3}.story-copy{padding:1.45rem}.story-copy h3{font-size:1.8rem}.story-steps{grid-template-columns:1fr}.story-metrics{gap:.45rem}.story-metric{padding:.7rem}.story-metric strong{font-size:1.25rem}.story-gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto}.story-gallery img:first-child{grid-column:1/-1;grid-row:auto}.story-gallery img:last-child{grid-column:1/-1;aspect-ratio:16/8}.principle-grid{grid-template-columns:1fr}.store-switcher{align-items:stretch;flex-direction:column;margin-top:-.7rem}.store-switcher select{width:100%}.store-copy{padding:1.5rem}.store-map-wrap,.store-map{min-height:19rem}.closing-inner{align-items:flex-start;flex-direction:column}.footer-main{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.copyright{flex-direction:column}
     }
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
@@ -192,6 +193,7 @@
       <div class="shell hero-inner">
         <div class="hero-copy"><p class="eyebrow">全球视野 · 东方美学 · 医学为本</p><h1>懂你，才懂美。</h1><span class="script">A More You</span><p class="hero-lead">先懂你，再谈改变</p><p class="hero-sub">环球美天 · 懂中国脸的原生美学品牌</p><div class="hero-actions"><a class="button primary" href="#about">了解品牌&nbsp; →</a><button class="button ghost" type="button" data-consult>在线咨询</button></div></div>
         <aside class="hero-quote"><strong>让每一次改变，都更像你自己</strong><small>A MORE NATURAL · A BRIGHTER YOU</small></aside>
+        <p class="hero-principles">懂你 · 守真 · 有度 · 久伴</p>
       </div>
     </section>
 
