@@ -162,7 +162,10 @@
 
     dialog{width:min(92vw,31rem);padding:0;color:var(--ink);background:white;border:1px solid var(--line);border-radius:1rem;box-shadow:0 28px 90px rgba(29,16,37,.28)}
     dialog::backdrop{background:rgba(47,28,52,.45);backdrop-filter:blur(4px)}
-    .dialog-inner{padding:1.6rem}.dialog-top{display:flex;align-items:center;justify-content:space-between}.dialog-top h2{margin:0;font:400 1.5rem/1.4 "Songti SC",SimSun,serif}.dialog-close{width:2.3rem;height:2.3rem;color:var(--purple);background:var(--mist);border:1px solid var(--line);border-radius:50%;cursor:pointer}.dialog-inner p{color:var(--muted)}.dialog-phone{display:inline-block;margin:.15rem 0 1rem;color:var(--purple);font:600 1.25rem/1.4 Georgia,serif}.dialog-note{padding:.9rem;background:var(--mist);border:1px solid var(--line);font-size:.82rem}
+    .dialog-inner{padding:1.6rem}.dialog-top{display:flex;align-items:center;justify-content:space-between}.dialog-top h2{margin:0;font:400 1.5rem/1.4 "Songti SC",SimSun,serif}.dialog-close{width:2.3rem;height:2.3rem;color:var(--purple);background:var(--mist);border:1px solid var(--line);border-radius:50%;cursor:pointer}.dialog-inner p{color:var(--muted)}.dialog-note{padding:.9rem;background:var(--mist);border:1px solid var(--line);font-size:.82rem}
+    .shop-name,.shop-hint{text-align:center}.shop-code{position:relative;width:min(100%,260px);aspect-ratio:1;margin:1.2rem auto .75rem;overflow:hidden;background:white}
+    /* Preserve the original mini-program code; show only its 260 × 260 px white square. */
+    .shop-code img{position:absolute;width:215.384615%;max-width:none;height:auto;left:-57.692308%;top:-109.230769%}
 
     @media(max-width:1100px){
       .desktop-nav,.header-actions{display:none}.menu-toggle{display:block}
@@ -185,7 +188,7 @@
     <div class="header-actions"><button class="button primary" type="button" data-consult>在线咨询</button><button class="button ghost" type="button" data-shop>商城入口</button></div>
     <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false"><span></span><span></span><span></span></button>
   </div></header>
-  <nav class="mobile-nav" aria-label="移动端导航"><a href="#home">首页</a><a href="#about">品牌理念</a><a href="#strength">品牌实力</a><a href="#stores">全国门店</a><a href="#news">品牌动态</a><a href="projects.html">具体项目</a><a href="doctors.html">医生团队</a><button type="button" data-consult>在线咨询</button></nav>
+  <nav class="mobile-nav" aria-label="移动端导航"><a href="#home">首页</a><a href="#about">品牌理念</a><a href="#strength">品牌实力</a><a href="#stores">全国门店</a><a href="#news">品牌动态</a><a href="projects.html">具体项目</a><a href="doctors.html">医生团队</a><button type="button" data-consult>在线咨询</button><button type="button" data-shop>商城入口</button></nav>
 
   <main>
     <section class="hero" id="home" aria-label="环球美天品牌首屏">
@@ -226,7 +229,7 @@
 
   <footer><div class="shell footer-main"><div class="footer-brand">环球美天<small>GLOBAL BEAUTY</small></div><div class="footer-group"><h3>关于我们</h3><a href="#about">品牌理念</a><a href="#strength">品牌实力</a><a href="#news">品牌动态</a><a href="#stores">全国门店</a></div><div class="footer-group"><h3>核心内容</h3><a href="projects.html">具体项目</a><a href="doctors.html">医生团队</a><a href="#spaces">诊疗环境</a></div><div class="footer-group"><h3>联系我们</h3><button class="button ghost" type="button" data-consult>在线咨询</button><a href="tel:13302602515">联系电话：13302602515</a></div></div><div class="shell copyright"><span>© 2026 环球美天 GLOBAL BEAUTY</span><span>专业 · 自然 · 协调 · 长期</span></div></footer>
 
-  <dialog id="info-dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><div class="dialog-top"><h2 id="dialog-title">在线咨询</h2><button class="dialog-close" type="button" aria-label="关闭">×</button></div><p id="dialog-copy">欢迎咨询环球美天。</p><a class="dialog-phone" href="tel:13302602515">13302602515</a><div class="dialog-note">点击号码即可拨打，具体服务请以官方客服回复为准。</div></div></dialog>
+  <dialog id="info-dialog" aria-labelledby="dialog-title" aria-describedby="shop-hint"><div class="dialog-inner"><div class="dialog-top"><h2 id="dialog-title">商城入口</h2><button class="dialog-close" type="button" aria-label="关闭">×</button></div><p class="shop-name">环球美天医疗美容 · 大众点评</p><figure class="shop-code"><img src="assets/dianping-mini-program.jpg" width="560" height="752" alt="环球美天医疗美容大众点评小程序码" loading="lazy"></figure><p class="shop-hint" id="shop-hint">微信扫码进入大众点评</p><div class="dialog-note">手机浏览时，可截屏后使用微信“扫一扫”从相册识别。</div></div></dialog>
   <script>
     const menuButton=document.querySelector('.menu-toggle');const mobileNav=document.querySelector('.mobile-nav');
     const closeMenu=()=>{mobileNav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','打开导航');document.body.classList.remove('menu-open')};
@@ -255,9 +258,9 @@
     const renderStore=store=>{const x=.025,y=.02;storeCity.textContent=`${store.city} · ${cityEnglish[store.city]}`;storeName.textContent=store.name;storeAddress.textContent=store.address;storeMap.title=`${store.name}地图定位`;storeMap.src=`https://www.openstreetmap.org/export/embed.html?bbox=${store.lon-x}%2C${store.lat-y}%2C${store.lon+x}%2C${store.lat+y}&layer=mapnik&marker=${store.lat}%2C${store.lon}`;storeConsult.dataset.consult=`${store.name}咨询`};
     const showCity=city=>{cityFilters.forEach(item=>{const active=item.dataset.cityFilter===city;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});const matches=stores.filter(store=>store.city===city);storeSelect.replaceChildren(...matches.map((store,index)=>new Option(store.name,String(index))));renderStore(matches[0])};
     cityFilters.forEach(filter=>filter.addEventListener('click',()=>showCity(filter.dataset.cityFilter)));storeSelect.addEventListener('change',()=>{const city=document.querySelector('.city-filter.active').dataset.cityFilter;renderStore(stores.filter(store=>store.city===city)[Number(storeSelect.value)])});showCity('东莞');
-    const dialog=document.querySelector('#info-dialog');const dialogTitle=document.querySelector('#dialog-title');const dialogCopy=document.querySelector('#dialog-copy');
+    const dialog=document.querySelector('#info-dialog');
     document.querySelectorAll('[data-consult]').forEach(button=>button.addEventListener('click',()=>{closeMenu();const source=button.dataset.consult||'在线咨询';location.href=`consult.html?source=${encodeURIComponent(source)}`}));
-    document.querySelectorAll('[data-shop]').forEach(button=>button.addEventListener('click',()=>{dialogTitle.textContent='商城入口';dialogCopy.textContent='页面已预留官方商城入口，确认商城地址后即可接入。';dialog.showModal()}));
+    document.querySelectorAll('[data-shop]').forEach(button=>button.addEventListener('click',()=>{closeMenu();dialog.showModal()}));
     document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
     dialog.addEventListener('click',event=>{const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close()});
   </script>
