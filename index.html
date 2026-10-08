@@ -160,10 +160,28 @@
     .footer-group a,.footer-group span{display:block;margin:.25rem 0;font-size:.8rem}
     .copyright{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0 1.2rem;border-top:1px solid var(--line);font-size:.75rem}
 
-    dialog{width:min(92vw,31rem);padding:0;color:var(--ink);background:white;border:1px solid var(--line);border-radius:1rem;box-shadow:0 28px 90px rgba(29,16,37,.28)}
-    dialog::backdrop{background:rgba(47,28,52,.45);backdrop-filter:blur(4px)}
-    .dialog-inner{padding:1.6rem}.dialog-top{display:flex;align-items:center;justify-content:space-between}.dialog-top h2{margin:0;font:400 1.5rem/1.4 "Songti SC",SimSun,serif}.dialog-close{width:2.3rem;height:2.3rem;color:var(--purple);background:var(--mist);border:1px solid var(--line);border-radius:50%;cursor:pointer}.dialog-inner p{color:var(--muted)}.dialog-note{padding:.9rem;background:var(--mist);border:1px solid var(--line);font-size:.82rem}
-    .shop-name,.shop-hint{text-align:center}.shop-code{position:relative;width:min(100%,260px);aspect-ratio:1;margin:1.2rem auto .75rem;overflow:hidden;background:white}
+    dialog{width:min(calc(100% - 32px),44rem);max-height:calc(100dvh - 32px);padding:0;color:var(--ink);background:#fcfafd;border:1px solid rgba(220,210,228,.9);border-radius:1.5rem;box-shadow:0 32px 100px rgba(40,21,48,.24)}
+    dialog::backdrop{background:rgba(40,25,48,.4);backdrop-filter:blur(6px)}
+    .dialog-inner{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 16.5rem;gap:1.8rem;padding:3rem 2.5rem 1.3rem;background:radial-gradient(ellipse at 0 0,#ece2f3 0,transparent 65%)}
+    .dialog-close{position:absolute;top:.85rem;right:.85rem;display:grid;place-items:center;width:2.5rem;height:2.5rem;padding:0;color:var(--violet);background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:50%;cursor:pointer;font-size:1.2rem;transition:background .2s,color .2s}
+    .dialog-close:hover{color:var(--purple);background:white}.dialog-close:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+    .shop-intro{align-self:center}.shop-intro .eyebrow{margin-bottom:1rem;font-size:.68rem;letter-spacing:.22em}
+    .dialog-top h2{margin:0;font:400 2.3rem/1.35 "Songti SC",SimSun,serif;letter-spacing:.08em}
+    .shop-name{margin:.65rem 0 1.5rem;color:var(--muted);font-size:.88rem}
+    .shop-invitation{margin:0;color:var(--purple);font:400 1.1rem/1.9 "Songti SC",SimSun,serif}
+    .shop-invitation::before{content:"";display:block;width:2rem;height:1px;margin-bottom:1.3rem;background:var(--lavender)}
+    .shop-values{margin:1.5rem 0 0;color:var(--violet);font-size:.7rem;letter-spacing:.12em}
+    .shop-card{padding:1.15rem 1.15rem 1rem;text-align:center;background:white;border:1px solid var(--line);border-radius:1.1rem;box-shadow:0 8px 28px rgba(84,43,97,.06)}
+    .shop-platform{display:inline-block;margin:0;padding:.25rem .8rem;color:var(--violet);background:var(--mist);border-radius:2rem;font-size:.7rem;letter-spacing:.06em}
+    .shop-code{position:relative;width:min(100%,224px);aspect-ratio:1;margin:.8rem auto;overflow:hidden;background:white}
+    .shop-code::after{content:"";position:absolute;inset:0;border:2px solid white;pointer-events:none}
+    .shop-hint{margin:0;color:var(--purple);font-size:.86rem;letter-spacing:.1em}
+    .dialog-note{grid-column:1/-1;margin:0;padding:1rem 0 0;color:var(--muted);border-top:1px solid var(--line);font-size:.72rem;line-height:1.8;text-align:center}
+    @media(max-width:560px){
+      .dialog-inner{grid-template-columns:minmax(0,1fr);gap:1.2rem;padding:2.6rem 1.4rem 1.2rem;text-align:center}
+      .shop-intro .eyebrow{margin-bottom:.5rem}.dialog-top h2{font-size:1.9rem}.shop-name{margin:.4rem 0 0;font-size:.82rem}
+      .shop-invitation,.shop-values{display:none}.shop-card{width:min(100%,16.5rem);justify-self:center}.dialog-note{padding-top:.9rem;font-size:.7rem}
+    }
     /* Preserve the original mini-program code; show only its 260 × 260 px white square. */
     .shop-code img{position:absolute;width:215.384615%;max-width:none;height:auto;left:-57.692308%;top:-109.230769%}
 
@@ -229,7 +247,24 @@
 
   <footer><div class="shell footer-main"><div class="footer-brand">环球美天<small>GLOBAL BEAUTY</small></div><div class="footer-group"><h3>关于我们</h3><a href="#about">品牌理念</a><a href="#strength">品牌实力</a><a href="#news">品牌动态</a><a href="#stores">全国门店</a></div><div class="footer-group"><h3>核心内容</h3><a href="projects.html">具体项目</a><a href="doctors.html">医生团队</a><a href="#spaces">诊疗环境</a></div><div class="footer-group"><h3>联系我们</h3><button class="button ghost" type="button" data-consult>在线咨询</button><a href="tel:13302602515">联系电话：13302602515</a></div></div><div class="shell copyright"><span>© 2026 环球美天 GLOBAL BEAUTY</span><span>专业 · 自然 · 协调 · 长期</span></div></footer>
 
-  <dialog id="info-dialog" aria-labelledby="dialog-title" aria-describedby="shop-hint"><div class="dialog-inner"><div class="dialog-top"><h2 id="dialog-title">商城入口</h2><button class="dialog-close" type="button" aria-label="关闭">×</button></div><p class="shop-name">环球美天医疗美容 · 大众点评</p><figure class="shop-code"><img src="assets/dianping-mini-program.jpg" width="560" height="752" alt="环球美天医疗美容大众点评小程序码" loading="lazy"></figure><p class="shop-hint" id="shop-hint">微信扫码进入大众点评</p><div class="dialog-note">手机浏览时，可截屏后使用微信“扫一扫”从相册识别。</div></div></dialog>
+  <dialog id="info-dialog" aria-labelledby="dialog-title" aria-describedby="shop-hint">
+    <div class="dialog-inner">
+      <button class="dialog-close" type="button" aria-label="关闭">×</button>
+      <div class="shop-intro">
+        <p class="eyebrow">GLOBAL BEAUTY</p>
+        <div class="dialog-top"><h2 id="dialog-title">商城入口</h2></div>
+        <p class="shop-name">环球美天医疗美容</p>
+        <p class="shop-invitation">微信扫码<br>进入大众点评店铺</p>
+        <p class="shop-values">懂你 · 守真 · 有度 · 久伴</p>
+      </div>
+      <div class="shop-card">
+        <p class="shop-platform">大众点评 · 小程序</p>
+        <figure class="shop-code"><img src="assets/dianping-mini-program.jpg" width="560" height="752" alt="环球美天医疗美容大众点评小程序码" loading="lazy"></figure>
+        <p class="shop-hint" id="shop-hint">微信扫一扫，即可进入</p>
+      </div>
+      <p class="dialog-note">手机浏览可截图，在微信「扫一扫」中从相册识别。</p>
+    </div>
+  </dialog>
   <script>
     const menuButton=document.querySelector('.menu-toggle');const mobileNav=document.querySelector('.mobile-nav');
     const closeMenu=()=>{mobileNav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','打开导航');document.body.classList.remove('menu-open')};
